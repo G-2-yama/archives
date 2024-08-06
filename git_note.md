@@ -2,12 +2,12 @@
 今回は，CLI (コマンドラインインタフェース)を使用したGitの簡単な使い方を説明します．  
 目次は以下の通りです．
 
-0. SSHキーの設定
-0. クローン (clone)
-0. 状況の確認 (status, log)
-0. ローカルでの操作 (add, commit)
-0. リモートとのやり取り (push, pull)
-0. ブランチの確認，操作 (branch, checkout)
+0. [SSHキーの設定](#0-sshキーの設定)
+0. [クローン (clone)](#1-クローン-clone)
+0. [状況の確認 (status, log)](#2-状況の確認-status-log)
+0. [ローカルでの操作 (add, commit)](#3-ローカルでの操作-add-commit)
+0. [リモートとのやり取り (push, pull)](#4-リモートとのやり取り-push-pull)
+0. [ブランチの確認，操作 (branch, checkout)](#5-ブランチの確認操作-branch-checkout)
 
 なお，他にもstashなどの便利な使い方はありますが，今回はあくまで簡単な使い方ということでそれらは省略させていただきます．
 ## 0. SSHキーの設定
@@ -150,3 +150,5 @@ git push
 git pull
 ```
 を実行することによって，`pull`が可能です．
+
+## 5. ブランチの確認，操作 (branch, checkout)
