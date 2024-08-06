@@ -7,7 +7,7 @@
 0. [状況の確認 (status, log)](#2-状況の確認-status-log)
 0. [ローカルでの操作 (add, commit)](#3-ローカルでの操作-add-commit)
 0. [リモートとのやり取り (push, pull)](#4-リモートとのやり取り-push-pull)
-0. [ブランチの確認，操作 (branch, checkout)](#5-ブランチの確認操作-branch-checkout)
+0. [ブランチの確認，操作 (branch, checkout merge)](#5-ブランチの確認操作-branch-checkout-merge)
 
 なお，他にもstashなどの便利な使い方はありますが，今回はあくまで簡単な使い方ということでそれらは省略させていただきます．
 ## 0. SSHキーの設定
@@ -151,7 +151,7 @@ git pull
 ```
 を実行することによって，`pull`が可能です．
 
-## 5. ブランチの確認，操作 (branch, checkout)
+## 5. ブランチの確認，操作 (branch, checkout merge)
 最後に，ブランチの確認と操作について解説します．
 
 ### 5.1 branch
@@ -183,13 +183,13 @@ git checkout (ブランチ名)
 
 また，
 ```
-git branch -b (ブランチ名)
+git checkout -b (ブランチ名)
 ```
 というように `-b` オプションを付けることで，ローカル内でブランチを作成してからそこに移動することが出来ます．
 
 リモートのブランチをローカルに持ってきてからそこに移動する場合は
 ```
-git branch -b (ブランチ名) origin/(ブランチ名)
+git checkout -b (ブランチ名) origin/(ブランチ名)
 ```
 としてください．
 
@@ -198,6 +198,14 @@ git branch -b (ブランチ名) origin/(ブランチ名)
 git push -u origin (ローカルのブランチ名)
 ```
 を実行すれば可能です．
+
+### 5.3 merge
+`merge` を行うには，マージされる側(主となる，取り込む側のブランチ．例としてmain-branchとする)にチェックアウトしてから，マージする側(取り込まれる側のブランチ．例としてsub-branchとする)を指定するような形で
+```
+git merge (取り込まれるブランチ名．今回の例ではsub-branch)
+```
+というように実行します．  
+こうすると，main-branchの`commit`履歴にsub-branchの履歴が統合されます．
 
 > 参考 (実際に使うときはこちらの資料を見るとやりやすいです)  
 https://qiita.com/kohga/items/dccf135b0af395f69144
